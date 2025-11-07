@@ -13,7 +13,6 @@ let grid = [];
 let running = false;
 let speed = 20;
 
-// Initialize grid
 function initGrid(random=false){
     grid = [];
     for(let y=0;y<rows;y++){
@@ -25,7 +24,6 @@ function initGrid(random=false){
     }
 }
 
-// Draw grid
 function drawGrid(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     for(let y=0;y<rows;y++){
@@ -38,7 +36,6 @@ function drawGrid(){
     }
 }
 
-// Count neighbors
 function countNeighbors(x,y){
     let sum=0;
     for(let i=-1;i<=1;i++){
@@ -54,7 +51,6 @@ function countNeighbors(x,y){
     return sum;
 }
 
-// Step simulation
 function step(){
     const next = [];
     for(let y=0;y<rows;y++){
@@ -73,7 +69,6 @@ function step(){
     drawGrid();
 }
 
-// Animation
 function animate(){
     if(running){
         for(let i=0;i<speed;i++) step();
@@ -81,7 +76,6 @@ function animate(){
     requestAnimationFrame(animate);
 }
 
-// Mouse interaction
 canvas.addEventListener("click", (e)=>{
     const rect = canvas.getBoundingClientRect();
     const x = Math.floor((e.clientX-rect.left)/cellWidth);
@@ -90,7 +84,6 @@ canvas.addEventListener("click", (e)=>{
     drawGrid();
 });
 
-// Controls
 document.getElementById("startBtn").addEventListener("click",()=>{ running=true; });
 document.getElementById("stopBtn").addEventListener("click",()=>{ running=false; });
 document.getElementById("clearBtn").addEventListener("click",()=>{ initGrid(); drawGrid(); });
