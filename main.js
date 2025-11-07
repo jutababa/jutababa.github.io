@@ -1,4 +1,3 @@
-// Particle system
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
