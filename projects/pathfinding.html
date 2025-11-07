@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pathfinding Visualizer</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+body { margin:0; overflow:hidden; font-family: Georgia, serif; background:#0a0a0a; color:white;}
+canvas { display:block; background: linear-gradient(to top, #0a0a0a, #111);}
+.controls {
+  position: absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex; flex-wrap:wrap; gap:10px; z-index:2;
+}
+.controls select, .controls button, .controls input {
+  background:#111; color:white; border:1px solid white; padding:6px 12px; border-radius:5px;
+  cursor:pointer; font-family: Georgia, serif; transition:0.2s;
+}
+.controls select:hover, .controls button:hover, .controls input:hover { background:white; color:black; box-shadow:0 0 8px #0ff;}
+.back-btn { position:absolute; top:10px; left:10px; color:white; border:1px solid white; padding:6px 12px; border-radius:5px; text-decoration:none; transition:0.2s;}
+.back-btn:hover { background:white; color:black; box-shadow:0 0 10px #0ff; }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<a class="back-btn" href="../index.html">← Home</a>
+
+<div class="controls">
+  <select id="tool">
+    <option value="wall">Wall</option>
+    <option value="erase">Eraser</option>
+    <option value="line">Line</option>
+    <option value="square">Square</option>
+    <option value="start">Move Start</option>
+    <option value="end">Move End</option>
+  </select>
+  <button id="resetBtn">Reset Grid</button>
+  <button id="startBtn">Start Pathfinding</button>
+  <label>Speed: <input type="range" id="speed" min="1" max="50" value="20"></label>
+</div>
+
+<script src="pf.js"></script>
+</body>
+</html>

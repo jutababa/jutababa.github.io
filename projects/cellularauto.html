@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cellular Automaton</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+body { margin:0; font-family: Georgia, serif; background:#0a0a0a; color:white; overflow:hidden; }
+canvas { display:block; background: linear-gradient(to top, #0a0a0a, #111); }
+
+.controls {
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex; gap:10px; flex-wrap:wrap; z-index:2;
+}
+.controls button, .controls input {
+  background:#111; color:white; border:1px solid white; padding:6px 12px; border-radius:5px;
+  cursor:pointer; transition:0.2s; font-family: Georgia, serif;
+}
+.controls button:hover, .controls input:hover { background:white; color:black; box-shadow:0 0 8px #0ff; }
+
+.back-btn {
+  position:absolute; top:10px; left:10px; color:white; border:1px solid white;
+  padding:6px 12px; border-radius:5px; text-decoration:none; transition:0.2s;
+}
+.back-btn:hover { background:white; color:black; box-shadow:0 0 10px #0ff; }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<a class="back-btn" href="../index.html">← Home</a>
+
+<div class="controls">
+  <button id="startBtn">Start</button>
+  <button id="stopBtn">Stop</button>
+  <button id="clearBtn">Clear</button>
+  <button id="randomBtn">Randomize</button>
+  <label>Speed: <input type="range" id="speed" min="1" max="50" value="20"></label>
+</div>
+
+<script src="ca.js"></script>
+</body>
+</html>

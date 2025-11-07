@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorting Visualizer</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+body {
+    margin:0;
+    background: #0a0a0a;
+    font-family: Georgia, serif;
+    color:white;
+    overflow:hidden;
+}
+
+canvas { display:block; background: linear-gradient(to top, #0a0a0a, #111); }
+
+.controls {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 2;
+}
+
+.controls select, .controls button, .controls input {
+    background: #111;
+    color:white;
+    border: 1px solid #fff;
+    padding: 6px 12px;
+    border-radius:5px;
+    cursor:pointer;
+    font-family: Georgia, serif;
+    transition:0.2s;
+}
+
+.controls select:hover, .controls button:hover, .controls input:hover {
+    background:white;
+    color:black;
+    box-shadow:0 0 8px #0ff;
+}
+
+.back-btn {
+    position:absolute;
+    top:10px;
+    left:10px;
+    color:white;
+    border:1px solid white;
+    padding:6px 12px;
+    border-radius:5px;
+    text-decoration:none;
+    transition:0.2s;
+}
+.back-btn:hover {
+    background:white;
+    color:black;
+    box-shadow:0 0 10px #0ff;
+}
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<a class="back-btn" href="../index.html">← Home</a>
+
+<div class="controls">
+    <select id="mode">
+        <option value="bars">Graph Bars</option>
+        <option value="numbers">Number Array</option>
+    </select>
+
+    <select id="algorithm">
+        <option value="bubble">Bubble Sort</option>
+        <!-- more algorithms can be added -->
+    </select>
+
+    <input type="text" id="customArray" placeholder="Add numbers comma separated">
+
+    <button id="startBtn">Start</button>
+    <button id="resetBtn">Reset</button>
+    <label>
+        Speed:
+        <input type="range" id="speed" min="1" max="100" value="50">
+    </label>
+</div>
+
+<script src="sort.js"></script>
+</body>
+</html>
